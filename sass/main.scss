@@ -1,0 +1,276 @@
+@forward './reset';
+@use './abstract' as *;
+
+html {
+  @media (max-width: 1000px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background-color: $color-white;
+  color: $color-white;
+
+  font-family: 'Poppins', serif;
+
+  @include flex-settings;
+  @include dimension-settings(100vw, null, 100vh);
+}
+
+// *** Main ***
+.main {
+  background: url('../images/bg-intro-desktop.png') center / cover no-repeat;
+
+  background-color: $color-error-messages;
+
+  padding: 0 3rem;
+
+  @include flex-settings;
+  @include dimension-settings(100%, null, 80rem, 144rem);
+
+  @media (max-width: 810px) {
+    @include dimension-settings(100%, null, 95rem, 144rem);
+  }
+
+  @media (max-width: 500px) {
+    @include dimension-settings(100%, null, 100rem, 144rem);
+  }
+}
+// *** End of Main ***
+
+// *** Container ***
+.container {
+  @include flex-settings($gap: 4.5rem);
+  @include dimension-settings(100%, null, 55.8rem, 111rem);
+
+  @media (max-width: 810px) {
+    @include flex-settings($direction: column);
+  }
+}
+// *** End of Container ***
+
+// *** Content ***
+.content {
+  margin: 0 auto;
+
+  @include flex-settings(null, null, column, 1.1rem);
+
+  @media (max-width: 810px) {
+    @include dimension-settings(100%, $max-width: 50rem);
+  }
+  @media (max-width: 500px) {
+    text-align: center;
+  }
+
+  // *** Heading ***
+  &__heading {
+    @include font-settings(5rem, 700, 5.5rem, -0.052rem);
+
+    @media (max-width: 500px) {
+      @include font-settings(4rem, 700, 5.5rem, -0.052rem);
+    }
+  }
+  // *** End of Heading ***
+
+  // *** Description ***
+  &__description {
+    @include font-settings(1.6rem, 500, 2.6rem);
+
+    @media (max-width: 500px) {
+      @include font-settings(1.4rem, 500, 2.6rem);
+    }
+  }
+  // *** End of Description ***
+}
+// *** End of Content ***
+
+// *** Wrapper Form && Description ***
+.wrapper {
+  @include dimension-settings(100%, null, null, 54rem);
+
+  &__description {
+    background-color: $color-secondary;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem rgba($color: $color-black, $alpha: 0.15);
+
+    padding: 1.7rem 0;
+    margin-bottom: 2.4rem;
+
+    @include dimension-settings(100%);
+    @include flex-settings($gap: 0.5rem);
+
+    &-s1 {
+      @include font-settings(1.5rem, 700, 2.6rem, 0.027rem);
+    }
+
+    &-s2 {
+      @include font-settings(1.5rem, 400, 2.6rem, 0.027rem);
+    }
+  }
+}
+// *** End of Wrapper Form ***
+
+// *** Form ***
+.form {
+  background-color: $color-white;
+  box-shadow: 0 0.8rem rgba($color: $color-black, $alpha: 0.15);
+  border-radius: 1rem;
+
+  padding: 4rem;
+
+  @include flex-settings(null, null, column, 2.5rem);
+  @include dimension-settings($min-height: 47.4rem);
+
+  // *** Screen Reader Only  ***
+  &__label {
+    position: absolute;
+
+    padding: 0;
+    margin: -0.1rem;
+
+    border: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+
+    @include dimension-settings(0.1rem, 0.1rem);
+  }
+  // *** End of Screen Reader Only  ***
+
+  // *** Control Inputs Wrapper && Error class ***
+  &__control-inputs {
+    position: relative;
+    @include dimension-settings(100%, 5.6rem);
+
+    input:-webkit-autofill {
+      background-color: $color-black !important;
+      color: $color-black !important;
+    }
+
+    &.error .form__input {
+      border-color: $color-error-messages;
+    }
+
+    &.error .form__error-icon {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.error .form__error-message {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // *** End of Control Inputs Wrapper ***
+
+  // *** Input ***
+  &__input {
+    border: 0.1rem solid $color-outline;
+    border-radius: 0.5rem;
+    outline: 0;
+
+    padding-left: 3.5rem;
+
+    @include dimension-settings(100%, 100%);
+    @include font-settings(1.4rem, 600, 2.6rem, 0.027rem);
+
+    // tu zmenit podla figmy box shadow
+    &:focus {
+      box-shadow: 0 0 0.2rem 0.1rem $color-secondary;
+      border-color: $color-secondary;
+    }
+
+    &:-webkit-autofill {
+      background-color: $color-white !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    transition: all 0.25s;
+  }
+  // *** End of Input ***
+
+  // *** Error Icon ***
+  &__error-icon {
+    position: absolute;
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.25s;
+  }
+  // *** End of Error Icon ***
+
+  // *** Error Message ***
+  &__error-message {
+    display: block;
+
+    color: $color-error-messages;
+
+    margin: {
+      top: 0.5rem;
+      right: 1rem;
+    }
+
+    text: {
+      transform: uppercase;
+      align: right;
+    }
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.25s;
+
+    @include font-settings(1rem, 700, 100%, 0.027rem);
+  }
+  // *** End of Error Message ***
+
+  // *** Btn ***
+  &__btn {
+    color: inherit;
+    background-color: $color-primary;
+
+    border-radius: 0.5rem;
+    box-shadow: inset 0 -0.4rem rgba($color: $color-black, $alpha: 0.1);
+
+    text-transform: uppercase;
+
+    opacity: 1;
+    transition: opacity 0.25s;
+
+    cursor: pointer;
+
+    @include dimension-settings(100%, 5.6rem);
+    @include font-settings(1.5rem, 600, 5.6rem, 0.1rem);
+
+    &:hover,
+    &:active {
+      opacity: 0.8;
+    }
+  }
+  // *** End of Btn ***
+
+  // *** Text Term / Services ***
+  &__text {
+    color: $color-quaternary;
+
+    margin-top: -1.2rem;
+
+    text-align: center;
+
+    &-s1 {
+      @include font-settings(1.1rem, 500, 2.6rem, 0);
+    }
+    &-s2 {
+      color: $color-error-messages;
+      @include font-settings(1.1rem, 700, 2.6rem, 0);
+    }
+  }
+  // *** End of Text Term / Services ***
+}
+// *** End of Form ***

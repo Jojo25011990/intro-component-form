@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Main -->
+    <main class="main">
+      <div class="container">
+        <!-- Main Content -->
+        <div class="content">
+          <h2 class="content__heading">Learn to code by watching others</h2>
+          <p class="content__description">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Wrapper Form -->
+        <div class="wrapper">
+          <p class="wrapper__description">
+            <span class="wrapper__description-s1"> Try it free 7 days</span>
+            <span class="wrapper__description-s2">then $20/mo. thereafter</span>
+          </p>
+
+          <!-- Form -->
+          <form class="form" id="form" novalidate>
+            <!-- First Name -->
+            <div class="form__control-inputs">
+              <label for="firstname" class="form__label">First Name</label>
+              <input
+                type="text"
+                class="form__input"
+                placeholder="First Name"
+                id="firstname"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error Icon"
+                class="form__error-icon"
+              />
+
+              <small class="form__error-message">Error Message</small>
+            </div>
+            <!-- End of First Name -->
+
+            <!-- Last Name -->
+            <div class="form__control-inputs">
+              <label for="lastname" class="form__label">Last Name</label>
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Last Name"
+                id="lastname"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error Icon"
+                class="form__error-icon"
+              />
+              <small class="form__error-message">Error Message</small>
+            </div>
+            <!-- End of Last Name -->
+
+            <!-- Email -->
+            <div class="form__control-inputs">
+              <label for="email" class="form__label">Email Address</label>
+              <input
+                type="email"
+                class="form__input"
+                placeholder="Email Address"
+                id="email"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error Icon"
+                class="form__error-icon"
+              />
+              <small class="form__error-message">Error Message</small>
+            </div>
+            <!-- End of Email -->
+
+            <!-- Password -->
+            <div class="form__control-inputs">
+              <label for="password" class="form__label">Password</label>
+              <input
+                type="password"
+                class="form__input"
+                placeholder="Password"
+                id="password"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Error Icon"
+                class="form__error-icon"
+              />
+              <small class="form__error-message">Error Message</small>
+            </div>
+            <!-- End of Password -->
+
+            <!-- Submit Button -->
+            <button class="form__btn">Claim your free trial</button>
+            <!-- End of Submit Button -->
+
+            <!-- Text Term / Services -->
+            <p class="form__text">
+              <span class="form__text-s1">
+                By clicking the button, you are agreeing to our</span
+              >
+              <span class="form__text-s2">Terms and Services</span>
+            </p>
+            <!-- End of Text Term / Services -->
+          </form>
+          <!-- End of Form -->
+        </div>
+        <!-- End of Wrapper Form -->
+      </div>
+    </main>
+    <!-- End of Main -->
+
+    <footer>
+      <p class="attribution" hidden>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Jozef Kudrna</a>.
+      </p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
