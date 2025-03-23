@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/Jojo25011990/intro-component-form)
-- Live Site URL: [Gibhub Pages](https://your-live-site-url.com)
+- Live Site URL: [Gibhub Pages](https://jojo25011990.github.io/intro-component-form/)
 
 ## My process
 
